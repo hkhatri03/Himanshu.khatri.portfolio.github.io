@@ -220,7 +220,227 @@
 </style>
 </head>
 <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Himanshu Khatri — Product Manager Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18;
+    --ink2: #3d3d3a;
+    --muted: #7a7a75;
+    --rule: #e2e0d8;
+    --bg: #f9f8f4;
+    --bg2: #ffffff;
+    --accent: #1F4E79;
+    --accent-light: #e8f0f8;
+    --amber: #b35a00;
+    --amber-bg: #fff5e8;
+    --green: #1a5c34;
+    --green-bg: #eaf5ef;
+    --tag-bg: #f0efe9;
+    --tag-ink: #4a4a45;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
 
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(249,248,244,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+  }
+  .nav-name { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--accent); letter-spacing: -0.02em; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 32px; }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 88px 0 72px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-eyebrow {
+    font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .hero-eyebrow::after { content: ''; display: block; width: 32px; height: 1px; background: var(--accent); }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(42px, 6vw, 64px);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 24px;
+    max-width: 720px;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero-body { font-size: 17px; line-height: 1.75; color: var(--ink2); max-width: 600px; margin-bottom: 36px; }
+  .hero-stats {
+    display: flex; gap: 40px; flex-wrap: wrap;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+  }
+  .stat-item .stat-num { font-family: 'DM Serif Display', serif; font-size: 36px; color: var(--accent); line-height: 1; }
+  .stat-item .stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
+  .tag { background: var(--tag-bg); color: var(--tag-ink); font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 20px; letter-spacing: 0.02em; }
+  .tag.accent { background: var(--accent-light); color: var(--accent); }
+
+  /* ── SECTION STRUCTURE ── */
+  .section { padding: 72px 0; border-bottom: 1px solid var(--rule); }
+  .section:last-child { border-bottom: none; }
+  .section-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 48px; }
+  .section-num { font-family: 'DM Serif Display', serif; font-size: 13px; color: var(--muted); }
+  .section-title { font-family: 'DM Serif Display', serif; font-size: 32px; letter-spacing: -0.02em; color: var(--ink); }
+
+  /* ── CASE STUDIES ── */
+  .case-study {
+    background: var(--bg2);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 32px;
+  }
+  .cs-header {
+    padding: 32px 36px 24px;
+    border-bottom: 1px solid var(--rule);
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 24px;
+    flex-wrap: wrap;
+  }
+  .cs-meta { flex: 1; }
+  .cs-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .cs-title { font-family: 'DM Serif Display', serif; font-size: 26px; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 8px; }
+  .cs-subtitle { font-size: 14px; color: var(--muted); }
+  .cs-role-badge { background: var(--accent-light); color: var(--accent); font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 20px; white-space: nowrap; align-self: flex-start; }
+  .cs-body { padding: 32px 36px; }
+  .cs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+  @media (max-width: 600px) { .cs-grid { grid-template-columns: 1fr; } }
+  .cs-block-title { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+  .cs-block-body { font-size: 14px; color: var(--ink2); line-height: 1.7; }
+  .cs-divider { border: none; border-top: 1px solid var(--rule); margin: 28px 0; }
+  .cs-narrative { font-size: 15px; line-height: 1.8; color: var(--ink2); margin-bottom: 24px; }
+  .cs-narrative strong { color: var(--ink); font-weight: 500; }
+  .impact-row { display: flex; gap: 24px; flex-wrap: wrap; margin: 24px 0; }
+  .impact-chip {
+    background: var(--green-bg); border: 1px solid #b8ddc7;
+    border-radius: 10px; padding: 14px 20px; flex: 1; min-width: 140px;
+  }
+  .impact-num { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--green); line-height: 1; }
+  .impact-label { font-size: 12px; color: var(--green); margin-top: 3px; }
+  .tradeoff-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .tradeoff-list li { font-size: 14px; color: var(--ink2); padding-left: 20px; position: relative; line-height: 1.65; }
+  .tradeoff-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 500; }
+  .learning-box { background: var(--amber-bg); border: 1px solid #f5c882; border-radius: 10px; padding: 16px 20px; margin-top: 20px; }
+  .learning-box .lb-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--amber); margin-bottom: 6px; }
+  .learning-box .lb-text { font-size: 14px; color: #7a4300; line-height: 1.65; }
+  .artifact-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+  .artifact-chip { background: var(--tag-bg); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 14px; font-size: 12px; color: var(--tag-ink); font-weight: 500; }
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin: 16px 0; }
+  .feature-card { background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; padding: 12px 14px; }
+  .feature-card .fc-name { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+  .feature-card .fc-why { font-size: 11px; color: var(--muted); }
+
+  /* ── PRODUCT THINKING ── */
+  .thought-card {
+    background: var(--bg2); border: 1px solid var(--rule); border-radius: 16px;
+    padding: 32px 36px; margin-bottom: 20px;
+  }
+  .thought-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+  .thought-title { font-family: 'DM Serif Display', serif; font-size: 22px; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 16px; }
+  .thought-body { font-size: 15px; color: var(--ink2); line-height: 1.8; }
+  .thought-body p + p { margin-top: 14px; }
+  .thought-insight { background: var(--accent-light); border-left: 3px solid var(--accent); padding: 12px 16px; margin: 16px 0; border-radius: 0 8px 8px 0; font-size: 14px; color: var(--accent); font-style: italic; }
+
+  /* ── ARTIFACTS ── */
+  .artifact-section { background: var(--bg2); border: 1px solid var(--rule); border-radius: 16px; padding: 32px 36px; margin-bottom: 20px; }
+  .art-title { font-family: 'DM Serif Display', serif; font-size: 20px; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 20px; }
+  .matrix-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .matrix-table th { background: var(--accent); color: white; padding: 10px 14px; text-align: left; font-weight: 500; font-size: 12px; letter-spacing: 0.04em; }
+  .matrix-table td { padding: 10px 14px; border-bottom: 1px solid var(--rule); color: var(--ink2); vertical-align: top; }
+  .matrix-table tr:last-child td { border-bottom: none; }
+  .pri-hi { background: #fef3f2; color: #b42318; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 10px; }
+  .pri-med { background: #fffaeb; color: #b54708; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 10px; }
+  .pri-lo { background: var(--green-bg); color: var(--green); font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 10px; }
+  .user-story-box { background: var(--bg); border: 1px solid var(--rule); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .us-label { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .us-text { font-size: 14px; color: var(--ink2); line-height: 1.7; }
+  .us-text strong { color: var(--ink); }
+  .us-ac { margin-top: 12px; }
+  .us-ac-label { font-size: 11px; font-weight: 500; color: var(--muted); margin-bottom: 6px; }
+  .us-ac li { font-size: 13px; color: var(--ink2); padding-left: 18px; position: relative; margin-bottom: 4px; }
+  .us-ac li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-size: 11px; top: 2px; }
+  .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .metric-card { background: var(--bg); border: 1px solid var(--rule); border-radius: 10px; padding: 16px 18px; }
+  .metric-name { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+  .metric-why { font-size: 12px; color: var(--muted); margin-bottom: 8px; line-height: 1.5; }
+  .metric-target { font-size: 12px; color: var(--accent); font-weight: 500; }
+
+  /* ── FOOTER ── */
+  .footer { padding: 48px 0; text-align: center; }
+  .footer-name { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--accent); margin-bottom: 8px; }
+  .footer-contact { font-size: 14px; color: var(--muted); }
+  .footer-contact a { color: var(--accent); text-decoration: none; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .hero > * { animation: fadeUp 0.6s ease both; }
+  .hero .hero-eyebrow { animation-delay: 0.05s; }
+  .hero h1 { animation-delay: 0.12s; }
+  .hero-body { animation-delay: 0.18s; }
+  .tag-row { animation-delay: 0.22s; }
+  .hero-stats { animation-delay: 0.28s; }
+  /* Resume Button & Contact Scroll */
+  .nav-resume-btn {
+    background: var(--accent);
+    color: white !important; 
+    padding: 6px 14px;
+    border-radius: 6px;
+    margin-left: 10px;
+    transition: opacity 0.2s;
+  }
+  .nav-resume-btn:hover {
+    opacity: 0.9;
+  }
+  #contact { scroll-margin-top: 60px; }
+.nav-resume-btn {
+    background: var(--accent);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid var(--accent);
+  }
+  .nav-resume-btn:hover {
+    background: transparent;
+    color: var(--accent) !important;
+  }
+  /* Smooth scroll fix */
+  #contact { scroll-margin-top: 100px; }
+
+</style>
+</head>
 <body>
 
 <nav>
@@ -228,7 +448,8 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#work">Case Studies</a></li>
-    <li><a href="#artifacts">Artifacts</a></li> <li><a href="#contact">Contact</a></li>
+    <li><a href="#artifacts">Artifacts</a></li>
+    <li><a href="#contact">Contact</a></li>
     <li><a href="Himanshu_Khatri_Resume.pdf" download class="nav-resume-btn">Resume ↓</a></li>
   </ul>
 </nav>
@@ -236,20 +457,21 @@
 <section class="hero" id="about">
   <div class="container">
     <div class="hero-eyebrow">Product Manager · Enterprise SaaS</div>
-    <h1>Building <em>High-Trust</em> Systems for Complex Workflows</h1>
+    <h1>Building <em>High-Trust</em> Infrastructure for Enterprise Scale</h1>
     <p class="hero-body">
-      I specialize in the "interface problem." Most enterprise software fails not because of features, but because of friction at the handoffs. Over the past 2+ years, I've shipped P2P platforms and AP automation systems with a **95% adoption rate** across 3 major organizations.
+      I specialize in the "interface problem." Over the past 2+ years at Arcolab, I've shipped P2P platforms and AP automation systems with a **95% adoption rate** across 3 major organizations.
     </p>
     <div class="tag-row">
       <span class="tag accent">SAP · DarwinBox · TrackWise</span>
-      <span class="tag">Procure-to-Pay</span>
+      <span class="tag">P2P</span>
       <span class="tag">AP Automation</span>
-      <span class="tag">Figma AI</span>
+      <span class="tag">GTM Strategy</span>
+      <span class="tag">Jira · Figma AI</span>
     </div>
     <div class="hero-stats">
-      <div class="stat-item"><div class="stat-num">95%</div><div class="stat-label">Adoption Rate</div></div>
-      <div class="stat-item"><div class="stat-num">~40%</div><div class="stat-label">Cycle Time Reduction</div></div>
-      <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Enterprise Integrations</div></div>
+      <div class="stat-item"><div class="stat-num">95%</div><div class="stat-label">Platform Adoption Rate</div></div>
+      <div class="stat-item"><div class="stat-num">~60%</div><div class="stat-label">AP Backlog Reduction</div></div>
+      <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Enterprise Rollouts</div></div>
     </div>
   </div>
 </section>
@@ -264,16 +486,50 @@
     <div class="case-study">
       <div class="cs-header">
         <div class="cs-meta">
-          <div class="cs-tag">01 · Scale & Adoption</div>
-          <div class="cs-title">Procure-to-Pay: Standardizing Enterprise Chaos</div>
+          <div class="cs-tag">01 · Scale</div>
+          <div class="cs-title">Procure-to-Pay: Standardizing Chaos</div>
         </div>
         <div class="cs-role-badge">Lead PM</div>
       </div>
       <div class="cs-body">
-        <p class="cs-narrative"><strong>The Challenge:</strong> Moving 3 organizations from fragmented emails to a unified system. I chose <strong>Configurability over Hard-coding</strong>, allowing for unique approval hierarchies without separate builds.</p>
+        <p class="cs-narrative">Built a **configurable approval engine** to move 3 organizations from fragmented emails to a unified digital core. I rejected a "one-size-fits-all" approach to ensure 100% compliance across different org hierarchies.</p>
         <div class="impact-row">
-          <div class="impact-chip"><div class="impact-num">95%</div><div class="impact-label">User Adoption</div></div>
-          <div class="impact-chip"><div class="impact-num">40%</div><div class="impact-label">Faster Approvals</div></div>
+          <div class="impact-chip"><div class="impact-num">95%</div><div class="impact-label">Adoption</div></div>
+          <div class="impact-chip"><div class="impact-num">~40%</div><div class="impact-label">Cycle Time Saved</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-study">
+      <div class="cs-header">
+        <div class="cs-meta">
+          <div class="cs-tag">02 · Efficiency</div>
+          <div class="cs-title">Accounts Payable Automation (AP DMS)</div>
+        </div>
+        <div class="cs-role-badge">Product Owner</div>
+      </div>
+      <div class="cs-body">
+        <p class="cs-narrative">Eliminated manual invoice processing backlogs by shifting focus from "Auto-Processing" to a **"Verification UI"** that built finance controller trust through auditability.</p>
+        <div class="impact-row">
+          <div class="impact-chip"><div class="impact-num">~60%</div><div class="impact-label">Processing Speedup</div></div>
+          <div class="impact-chip"><div class="impact-num">100%</div><div class="impact-label">Digital Audit Trail</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-study">
+      <div class="cs-header">
+        <div class="cs-meta">
+          <div class="cs-tag">03 · Strategy</div>
+          <div class="cs-title">InLumin: GTM & Enterprise Rollout</div>
+        </div>
+        <div class="cs-role-badge">GTM Lead</div>
+      </div>
+      <div class="cs-body">
+        <p class="cs-narrative">Managed the full GTM cycle for a new enterprise core. By identifying **"Champion Users"** 4 weeks before launch to co-design workflows, I reduced onboarding support tickets by 30%.</p>
+        <div class="impact-row">
+          <div class="impact-chip"><div class="impact-num">95%</div><div class="impact-label">Rollout Adoption</div></div>
+          <div class="impact-chip"><div class="impact-num">3</div><div class="impact-label">Orgs Onboarded</div></div>
         </div>
       </div>
     </div>
@@ -302,10 +558,20 @@
     </div>
 
     <div class="artifact-section">
-      <div class="art-title">Sample User Story — AP DMS</div>
+      <div class="art-title">Detailed User Story — AP DMS</div>
       <div class="user-story-box">
+        <div class="us-label">User Story</div>
         <div class="us-text">
           <strong>As an</strong> Accounts Payable Clerk, <strong>I want to</strong> submit an invoice digitally with validation, <strong>So that</strong> I can avoid manual rejection cycles.
+        </div>
+        <div class="us-ac">
+          <div class="us-ac-label">Acceptance Criteria</div>
+          <ul>
+            <li>System validates PO reference against database at submission.</li>
+            <li>Mandatory fields (Vendor, Amount, Date) must be completed to submit.</li>
+            <li>Automatic escalation if approval is not actioned within 48 hours.</li>
+            <li>Full audit trail logs for all approval/rejection actions.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -321,6 +587,10 @@
           <div class="metric-name">Compliance Rate</div>
           <div class="metric-target">Target: ≥ 98%</div>
         </div>
+        <div class="metric-card">
+          <div class="metric-name">Support Volume</div>
+          <div class="metric-target">Target: &lt; 5 tickets/week</div>
+        </div>
       </div>
     </div>
   </div>
@@ -331,12 +601,11 @@
     <div class="footer-name">Himanshu Khatri</div>
     <p class="footer-contact">
       <a href="mailto:hkhatrih0@gmail.com">hkhatrih0@gmail.com</a> · 
+      +91-8950752997 · 
       <a href="https://www.linkedin.com/in/himanshukhatri1" target="_blank">LinkedIn</a>
     </p>
   </div>
 </footer>
-
-</body>
 
 </body>
 </html>
