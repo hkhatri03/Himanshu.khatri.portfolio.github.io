@@ -188,6 +188,19 @@
   .hero-body { animation-delay: 0.18s; }
   .tag-row { animation-delay: 0.22s; }
   .hero-stats { animation-delay: 0.28s; }
+  /* Resume Button & Contact Scroll */
+  .nav-resume-btn {
+    background: var(--accent);
+    color: white !important; 
+    padding: 6px 14px;
+    border-radius: 6px;
+    margin-left: 10px;
+    transition: opacity 0.2s;
+  }
+  .nav-resume-btn:hover {
+    opacity: 0.9;
+  }
+  #contact { scroll-margin-top: 60px; }
 </style>
 </head>
 <body>
@@ -195,11 +208,12 @@
 <nav>
   <div class="nav-name">Himanshu Khatri</div>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#work">Case Studies</a></li>
-    <li><a href="#thinking">Product Thinking</a></li>
-    <li><a href="#artifacts">Artifacts</a></li>
-  </ul>
+  <li><a href="#about">About</a></li>
+  <li><a href="#work">Case Studies</a></li>
+  <li><a href="#thinking">Product Thinking</a></li>
+  <li><a href="#artifacts">Artifacts</a></li>
+  <li><a href="#contact">Contact</a></li> <li><a href="Himanshu_Khatri_Resume.pdf" download class="nav-resume-btn">Resume ↓</a></li>
+</ul>
 </nav>
 
 <!-- ── HERO ── -->
@@ -612,7 +626,7 @@
 </section>
 
 <!-- ── FOOTER ── -->
-<footer class="footer section">
+<footer class="footer section" id="contact">
   <div class="container">
     <div class="footer-name">Himanshu Khatri</div>
     <p class="footer-contact">
